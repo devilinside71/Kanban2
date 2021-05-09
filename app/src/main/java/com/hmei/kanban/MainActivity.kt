@@ -1,12 +1,14 @@
 package com.hmei.kanban
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -14,9 +16,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val fabAdd = findViewById<FloatingActionButton>(R.id.fabAdd)
+        val dummy= Dummy()
+
+        val recyclerViewTodo = findViewById<RecyclerView>(R.id.recyclerViewTodo)
+        val adapterTodo = TodoListAdapter(dummy.dummyListTodo())
+        recyclerViewTodo.adapter=adapterTodo
+        recyclerViewTodo.layoutManager = LinearLayoutManager(this)
+
+        val recyclerViewInProgress = findViewById<RecyclerView>(R.id.recyclerViewInProgress)
+        val adapterInProgress = InProgressListAdapter(dummy.dummyListInProgress())
+        recyclerViewInProgress.adapter=adapterInProgress
+        recyclerViewInProgress.layoutManager = LinearLayoutManager(this)
+
+        val recyclerViewDone = findViewById<RecyclerView>(R.id.recyclerViewDone)
+        val adapterDone = InProgressListAdapter(dummy.dummyListDone())
+        recyclerViewDone.adapter=adapterDone
+        recyclerViewDone.layoutManager = LinearLayoutManager(this)
 
         fabAdd.setOnClickListener {
            Log.e("Add","add item")
+            Log.e("List", dummy.dummyString())
         }
 
         supportActionBar?.apply {
@@ -36,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
 
             // Set the logo to display in the 'home' section of the action bar.
-            setLogo(R.mipmap.ic_launcher)
+            setLogo(R.mipmap.ic_launcher_kanban)
         }
     }
     // Menu handling

@@ -27,7 +27,7 @@ class AboutActivity : AppCompatActivity() {
 
 
             // Set the logo to display in the 'home' section of the action bar.
-            setLogo(R.mipmap.ic_launcher)
+            setLogo(R.mipmap.ic_launcher_kanban)
 
             setDisplayHomeAsUpEnabled(true)
         }

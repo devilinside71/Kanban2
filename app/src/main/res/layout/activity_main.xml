@@ -21,6 +21,7 @@
         android:id="@+id/layoutTodo"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:background="@color/colo_todo_bgr"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -30,21 +31,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/color_todo_title"
-            android:paddingStart="5dp"
+            android:minWidth="100dp"
+            android:padding="5dp"
             android:text="@string/label_todo"
-            />
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewTodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
     <View
         android:id="@+id/view1"
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="#cccccc"
         app:layout_constraintStart_toEndOf="@id/layoutTodo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,6 +58,7 @@
         android:id="@+id/layoutInProgress"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:background="@color/color_in_progress_bgr"
         android:orientation="vertical"
         app:layout_constraintStart_toEndOf="@id/view1"
         app:layout_constraintTop_toTopOf="parent">
@@ -61,9 +68,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/color_in_progress_title"
+            android:minWidth="100dp"
+            android:padding="5dp"
             android:paddingStart="5dp"
             android:text="@string/label_in_progress"
-             />
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewInProgress"
@@ -77,6 +88,7 @@
         android:layout_height="match_parent"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="#cccccc"
         app:layout_constraintStart_toEndOf="@id/layoutInProgress"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,6 +96,7 @@
         android:id="@+id/layoutDone"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:background="@color/color_done_bgr"
         android:orientation="vertical"
         app:layout_constraintStart_toEndOf="@+id/view2"
         app:layout_constraintTop_toTopOf="parent">
@@ -93,9 +106,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/color_done_title"
+            android:minWidth="100dp"
+            android:padding="5dp"
             android:paddingStart="5dp"
             android:text="@string/label_done"
-             />
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewDone"
