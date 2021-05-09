@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hmei.iris.iristoolskotlin.MainActivity">
+    <item
+        android:id="@+id/action_main_menu"
+        android:icon="@drawable/ic_more"
+        android:title="@string/action_item"
+        app:showAsAction="ifRoom">
+        <menu>
+            <group android:id="@+id/menu_group_settings">
+                <item
+                    android:id="@+id/action_settings"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/action_settings"
+                    app:showAsAction="never" />
+            </group>
+            <group android:id="@+id/menu_group_help">
+                <item
+                    android:id="@+id/action_about"
+                    android:icon="@drawable/ic_help"
+                    android:title="@string/action_about" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
