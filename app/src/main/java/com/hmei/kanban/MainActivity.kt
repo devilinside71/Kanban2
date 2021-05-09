@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             Log.e("List", dummy.dummyString())
         }
 
+        // action bar
         supportActionBar?.apply {
             setTitle(R.string.app_name)
             setSubtitle(R.string.app_subtitle)
@@ -57,7 +58,12 @@ class MainActivity : AppCompatActivity() {
             // Set the logo to display in the 'home' section of the action bar.
             setLogo(R.mipmap.ic_launcher_kanban)
         }
+
+
+
     }
+
+
     // Menu handling
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
